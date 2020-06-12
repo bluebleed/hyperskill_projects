@@ -1,0 +1,42 @@
+************** SOLUTION***************
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        //Start of "making the matrix"
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        int i;
+        int j;
+        int[][] matrix = new int[n][m];
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < m; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+        //End of "making the matrix"
+        
+        // Start of finding the maxValue Location
+        int maxValue = matrix[0][0];
+        int output1 = 0;
+        int output2 = 0;
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < m; j++) {
+                if (maxValue < matrix[i][j]) {
+                    maxValue = matrix[i][j];
+                    output1 = i;
+                    output2 = j;
+                    
+                }
+                
+            }
+            
+        }
+        // End  of finding the maxValue Location
+        
+        // Printing the location
+        System.out.println(output1 + " " + output2);
+    }
+}
